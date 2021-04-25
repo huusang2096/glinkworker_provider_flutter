@@ -1,0 +1,92 @@
+fastlane_require 'dotenv'
+
+before_all do
+  Dotenv.overload '.env'
+end
+
+default_platform(:android)
+
+platform :android do
+  desc "Deploy to Firebase App Distribution"
+  lane :build_release do
+    gradle(task: "clean assembleRelease", project_dir: './android')
+  end
+
+  lane :upload_firebase do
+      firebase_app_distribution(
+                              app: ENV['FIR_ANDROID_APP_ID'],
+                              apk_path: "build/app/outputs/apk/release/app-release.apk",
+                              service_credentials_file: ENV['FIR_SERVICE_CREDENTIALS_FILE'],
+                              groups: ENV['FIR_GROUP_NAME'],
+                              release_notes_file: ENV['FIR_RELEASE_NOTE_FILE']
+                          )
+  end
+
+  lane :deploy_firebase do
+    build_release
+    upload_firebase
+  end
+
+  lane :deploy_playstore do
+    build_release
+    supply(json_key: ENV['JSON_KEY_FILE'], apk: "build/app/outputs/apk/release/app-release.apk")
+  end
+end
+
+platform :ios do
+  lane :setup_keychain do 
+    sh('security unlock-keychain -p "$LOGIN_KEYCHAIN_PASSWORD" login.keychain')
+    sh('security set-key-partition-list -S apple: -s -k "$LOGIN_KEYCHAIN_PASSWORD" login.keychain')
+  end
+
+  desc "Description of what the lane does"
+  lane :build_firebase do
+    setup_keychain
+    match(git_branch: ENV['MATCH_GIT_BRANCH'], type: "adhoc", readonly: true,)
+    build_app(
+         workspace: "./ios/Runner.xcworkspace",
+         scheme: "Runner",
+         clean: true,
+         output_directory: './build',
+         export_options: {
+         method: "ad-hoc"
+         },)
+  end
+
+  lane :upload_firebase do
+    firebase_app_distribution(
+                            app: ENV['FIR_IOS_APP_ID'],
+                            ipa_path: "./build/Runner.ipa",
+                            service_credentials_file: ENV['FIR_SERVICE_CREDENTIALS_FILE'],
+                            release_notes_file: ENV['FIR_RELEASE_NOTE_FILE'],
+                            groups: ENV['FIR_GROUP_NAME'],
+                        )
+  end
+
+  lane :build_testflight do
+    setup_keychain
+    match(git_branch: ENV['MATCH_GIT_BRANCH'], type: "appstore", readonly: true,)
+      build_app(
+        workspace: "./ios/Runner.xcworkspace",
+             scheme: "Runner",
+             clean: true,
+             output_directory: './build',
+             export_options: {
+             method: "app-store"
+             },)
+  end
+
+  lane :upload_testflight do
+    upload_to_testflight(ipa: "./build/Runner.ipa", skip_waiting_for_build_processing: true)
+  end
+
+  lane :deploy_firebase do
+    build_firebase
+    upload_firebase
+  end
+
+  lane :deploy_testflight do
+    build_testflight
+    upload_testflight
+  end
+end

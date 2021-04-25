@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>838076439627-8506n3truqa4q71kla1kd9qm2bhcjh21.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.838076439627-8506n3truqa4q71kla1kd9qm2bhcjh21</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>838076439627-peh6p7m6c9122naqbjqv56sroj0fd2rl.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAfT2MnzOK91umli-SOI4b9XXZK9OQAoQw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>838076439627</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>vn.di4l.glinkworkprovider</string>
+	<key>PROJECT_ID</key>
+	<string>glinkwork-895be</string>
+	<key>STORAGE_BUCKET</key>
+	<string>glinkwork-895be.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:838076439627:ios:f59b9bbef85e183b41c1ce</string>
+	<key>DATABASE_URL</key>
+	<string>https://glinkwork-895be.firebaseio.com</string>
+</dict>
+</plist>

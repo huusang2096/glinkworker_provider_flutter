@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "838076439627",
+    "firebase_url": "https://glinkwork-895be.firebaseio.com",
+    "project_id": "glinkwork-895be",
+    "storage_bucket": "glinkwork-895be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838076439627:android:a35732278750fc8f41c1ce",
+        "android_client_info": {
+          "package_name": "vn.di4l.glinkwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838076439627-lultu8neo4mgecilia9cbl57fris5m1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiEpMXwjR-yCf2gpBFI-nFPUPw7cHwSRg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838076439627-lultu8neo4mgecilia9cbl57fris5m1q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "838076439627-3nflqf9o95rg26m74pnfft7463lppv64.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "vn.di4l.glinkwork"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838076439627:android:0b9c5039ff005f8841c1ce",
+        "android_client_info": {
+          "package_name": "vn.di4l.glinkwork.provider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838076439627-lultu8neo4mgecilia9cbl57fris5m1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiEpMXwjR-yCf2gpBFI-nFPUPw7cHwSRg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838076439627-lultu8neo4mgecilia9cbl57fris5m1q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "838076439627-3nflqf9o95rg26m74pnfft7463lppv64.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "vn.di4l.glinkwork"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
